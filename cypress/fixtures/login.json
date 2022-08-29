@@ -1,0 +1,7 @@
+{
+  "emailUser": "standard_user1@gmail.com",
+  "passwordUser": "secret_sauce",
+  "emailBar":"#email",
+  "passworBar":"#passwd",
+  "loginBtn": "#SubmitLogin>span"
+}
