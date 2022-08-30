@@ -1,7 +1,9 @@
 {
   "emailUser": "standard_user1@gmail.com",
+  "wrongEmail":"standard@gmail.com",
   "passwordUser": "secret_sauce",
   "emailBar":"#email",
   "passworBar":"#passwd",
+  "wrongEmailMessage":".center_column>div>ol>li",
   "loginBtn": "#SubmitLogin>span"
 }

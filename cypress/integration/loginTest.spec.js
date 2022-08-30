@@ -1,9 +1,10 @@
 import loginPage from "../page/main"
 import accountPage from "../page/accountPage"
 
+
 describe("Login Test", () => {
     beforeEach(() => {
-        cy.visit("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+        cy.visit(Cypress.env("urlMain"));
     });
 
     it('First Login intent', () => {
@@ -12,13 +13,13 @@ describe("Login Test", () => {
 
     it('Verify Content', () => {
         loginPage.userEntry("standard_user1@gmail.com", "secret_sauce");
-        
-        accountPage.elements.titleSpan().should("contain.text", "My account");
+        loginPage.textExist()
         
     });
 
     afterEach(() => {
         cy.logOut();
     });
+
     
 });

@@ -6,4 +6,7 @@ module.exports = {
       // implement node event listeners here
     },
   },
+  env: {
+    urlMain: "http://automationpractice.com/index.php?controller=authentication&back=my-account"
+  }
 };

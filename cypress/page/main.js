@@ -1,11 +1,12 @@
 import loginData from "../fixtures/login.json"
+import accountPage from "../page/accountPage";
 
 class User {
     elements = {
         emailUser: () => cy.get(loginData.emailBar),
         passUser: () => cy.get(loginData.passworBar),
         loginBtn: () => cy.get(loginData.loginBtn),
-        accountPage: ()=> cy.visit("http://automationpractice.com/index.php?controller=my-account")
+        wrongEmail: ()=> cy.get(loginData.wrongEmailMessage)
         
     };
 
@@ -14,6 +15,14 @@ class User {
         this.elements.passUser().type(password),
         this.elements.loginBtn().click();    
     }
+
+    wrongUser() {
+        this.elements.wrongEmail().should("exist")
+    };
+
+    textExist() {
+        accountPage.elements.titleSpan().should("contain.text", "My account");
+    };
 
 };
 
