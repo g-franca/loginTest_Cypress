@@ -1,4 +1,4 @@
-import loginPage from "../page/main"
+import accountPage from "../page/accountPage"
 import loginData from "../fixtures/login.json"
 
 describe("Login Test", () => {
@@ -7,12 +7,12 @@ describe("Login Test", () => {
     });
 
     it('Successfully Login intent', () => {
-        loginPage.userEntry(loginData.emailUser, loginData.passworBar);
+        accountPage.userEntry(loginData.emailUser, loginData.passwordUser);
     });
 
     it.only('Invalid Password', () => {
-        loginPage.userEntry(loginData.wrongEmail, loginData.passworBar);
-        loginPage.wrongUser()
+        accountPage.userEntry(loginData.wrongEmail, loginData.passwordUser);
+        accountPage.wrongUser()
     });
     
 });

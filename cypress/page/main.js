@@ -1,30 +1,65 @@
 import loginData from "../fixtures/login.json"
-import accountPage from "../page/accountPage";
-
-class User {
+import "cypress-real-events/support"
+class Buyer {
     elements = {
-        emailUser: () => cy.get(loginData.emailBar),
-        passUser: () => cy.get(loginData.passworBar),
-        loginBtn: () => cy.get(loginData.loginBtn),
-        wrongEmail: ()=> cy.get(loginData.wrongEmailMessage)
+        dressesBtn: () => cy.get(loginData.dressesBtn),
+        casualDressBtn: () => cy.get(loginData.casualDressBtn),
+        printedDress: () => cy.get(loginData.casualDressBtn),
+        addToCartBtn: () => cy.get(loginData.addToCartBtn),
+        CasualDressCheckOutbtn: () => cy.get(loginData.CasualDressCheckOutbtn),
+        shopCartCheckOutBtn: () => cy.get(loginData.shopCartCheckOutBtn),
+        adressCheckOutBtn: () => cy.get(loginData.adressCheckOutBtn),
+        shipTermsCheck: () => cy.get(loginData.shipTermsCheck),
+        shipCheckOutBtn: () => cy.get(loginData.shipCheckOutBtn),
+        bankWirePayment: () => cy.get(loginData.bankWirePayment),
+        orderConfirmationBtn: () => cy.get(loginData.orderConfirmationBtn),
+        returnToMenuBtn: () => cy.get(loginData.returnToMenuBtn),
+        textConfirmation:()=> cy.get(loginData.textConfirmation)
         
     };
 
-    userEntry(user, password) {
-        this.elements.emailUser().type(user),
-        this.elements.passUser().type(password),
-        this.elements.loginBtn().click();    
+    enterCasualDressesPage() {
+        this.elements.dressesBtn().realHover().wait(2000);
+        this.elements.casualDressBtn().click();
+    };
+
+    addItemToCart() {
+        this.elements.printedDress().realHover().wait(4000);
+        this.elements.addToCartBtn().click();
+    };
+
+    CasualDressCheckOutbtn() {
+        this.elements.CasualDressCheckOutbtn().click();
+    };
+
+    shopCartCheckOutBtn() {
+        this.elements.shopCartCheckOutBtn().click();
+    };
+
+    adressCheckOutBtn() {
+        this.elements.adressCheckOutBtn().click();
+    };
+
+    shippingPage() {
+        this.elements.shipTermsCheck().click().wait(2000);
+        this.elements.shipCheckOutBtn().click();
+    };
+    bankWirePayment() {
+        this.elements.bankWirePayment().click();
+    };
+
+    orderConfirmationBtn() {
+        this.elements.orderConfirmationBtn().click();
+    };
+
+    orderCompleted() {
+        this.elements.textConfirmation().should('have.text', 'Your order on My Store is complete.')
+            .and('have.css', 'color', 'rgb(51, 51, 51)');
+        this.elements.returnToMenuBtn().click();
     }
-
-    wrongUser() {
-        this.elements.wrongEmail().should("exist")
-    };
-
-    textExist() {
-        accountPage.elements.titleSpan().should("contain.text", "My account");
-    };
-
 };
 
-module.exports = new User
+
+
+module.exports = new Buyer
 

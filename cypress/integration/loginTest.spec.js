@@ -1,20 +1,18 @@
-import loginPage from "../page/main"
 import accountPage from "../page/accountPage"
+import loginData from "../fixtures/login.json"
 
 
 describe("Login Test", () => {
     beforeEach(() => {
-        cy.visit(Cypress.env("urlMain"));
-    });
-
-    it('First Login intent', () => {
-        loginPage.userEntry("standard_user1@gmail.com", "secret_sauce");
+        cy.session('todos', () => {
+            cy.visit(Cypress.env("urlMain"));
+        });
     });
 
     it('Verify Content', () => {
-        loginPage.userEntry("standard_user1@gmail.com", "secret_sauce");
-        loginPage.textExist()
-        
+        cy.visit(Cypress.env("urlMain"));
+        accountPage.userEntry("standard_user1@gmail.com", "secret_sauce");
+        accountPage.textExist()
     });
 
     afterEach(() => {
