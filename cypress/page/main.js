@@ -3,7 +3,7 @@ import "cypress-real-events/support"
 class Buyer {
     elements = {
         dressesBtn: () => cy.get(loginData.dressesBtn),
-        casualDressBtn: () => cy.get(loginData.casualDressBtn),
+        casualDressBtn: () => cy.get(loginData.casualDressBtn,{timeout: 10000}),
         printedDress: () => cy.get(loginData.casualDressBtn),
         addToCartBtn: () => cy.get(loginData.addToCartBtn),
         CasualDressCheckOutbtn: () => cy.get(loginData.CasualDressCheckOutbtn),
@@ -20,7 +20,7 @@ class Buyer {
 
     enterCasualDressesPage() {
         this.elements.dressesBtn().realHover().wait(2000);
-        this.elements.casualDressBtn().click();
+        this.elements.casualDressBtn().should('exist').click();
     };
 
     addItemToCart() {
@@ -49,7 +49,9 @@ class Buyer {
     };
 
     orderConfirmationBtn() {
-        this.elements.orderConfirmationBtn().click();
+        this.elements.orderConfirmationBtn().then(ocBtn =>{
+            expect(ocBtn).to.exist
+        }).click();
     };
 
     orderCompleted() {
