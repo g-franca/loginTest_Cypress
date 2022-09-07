@@ -28,7 +28,7 @@ describe("Purchase Process",() => {
         // SHIPPING Page
         loginPage.shippingPage();
         //PAYMENT METHOD Page
-        cy.log('Payment Method');
+        cy.log('Payment Method');   
         loginPage.bankWirePayment();
         //Order Confirmation
         cy.log('Order Confirmation');
