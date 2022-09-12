@@ -1,0 +1,5 @@
+{
+    "textConfirmation":"#center_column>div>p>strong",
+    "returnToMenuBtn":"#columns>div.breadcrumb.clearfix>a>i"
+    
+}

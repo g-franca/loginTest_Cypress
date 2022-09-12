@@ -1,0 +1,5 @@
+{
+    "myAccountHeading": ".page-heading",
+    "dressesBtn":"#block_top_menu>ul>:nth-child(2)>a",
+    "casualDressBtn":"#block_top_menu>ul>:nth-child(2)>ul>li:nth-child(1)>a"
+}

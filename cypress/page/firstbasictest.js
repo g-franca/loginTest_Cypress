@@ -1,12 +1,12 @@
-import loginData from "../fixtures/login.json"
+import loginPage from "../fixtures/loginpage.json"
 
 class User {
     elements = {
-        emailUser: () => cy.get(loginData.emailBar),
-        passUser: () => cy.get(loginData.passworBar),
-        loginBtn: () => cy.get(loginData.loginBtn),
-        wrongEmail: () => cy.get(loginData.wrongEmailMessage),
-        myAccountHeading:()=> cy.get(loginData.myAccountHeading)
+        emailUser: () => cy.get(loginPage.emailBar),
+        passUser: () => cy.get(loginPage.passworBar),
+        loginBtn: () => cy.get(loginPage.loginBtn),
+        wrongEmail: () => cy.get(loginPage.wrongEmailMessage),
+        myAccountHeading:()=> cy.get(loginPage.myAccountHeading)
         
         
     };

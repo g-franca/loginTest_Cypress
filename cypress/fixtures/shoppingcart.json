@@ -1,0 +1,3 @@
+{
+    "shopCartCheckOutBtn":"#center_column>p.cart_navigation.clearfix>a.button.btn.btn-default.standard-checkout.button-medium>span"
+}
