@@ -6,7 +6,7 @@ class Buyer {
         casualDressBtn: () => cy.get(loginData.casualDressBtn,{timeout: 10000}),
         printedDress: () => cy.get(loginData.casualDressBtn),
         addToCartBtn: () => cy.get(loginData.addToCartBtn),
-        CasualDressCheckOutbtn: () => cy.get(loginData.CasualDressCheckOutbtn),
+        CasualDressCheckOutbtn: () => cy.get(loginData.CasualDressCheckOutbtn, {timeout: 10000}),
         shopCartCheckOutBtn: () => cy.get(loginData.shopCartCheckOutBtn),
         adressCheckOutBtn: () => cy.get(loginData.adressCheckOutBtn),
         shipTermsCheck: () => cy.get(loginData.shipTermsCheck),
@@ -29,7 +29,7 @@ class Buyer {
     };
 
     CasualDressCheckOutbtn() {
-        this.elements.CasualDressCheckOutbtn().click();
+        this.elements.CasualDressCheckOutbtn().should('be.visible').click();
     };
 
     shopCartCheckOutBtn() {
