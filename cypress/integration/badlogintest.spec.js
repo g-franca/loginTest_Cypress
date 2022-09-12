@@ -1,5 +1,5 @@
-import accountPage from "../page/accountPage"
-import loginData from "../fixtures/login.json"
+import firstBasicTest from "../page/firstbasictest"
+import loginPage from "../fixtures/loginpage.json"
 
 describe("Login Test", () => {
     beforeEach(() => {
@@ -7,12 +7,12 @@ describe("Login Test", () => {
     });
 
     it('Successfully Login intent', () => {
-        accountPage.userEntry(loginData.emailUser, loginData.passwordUser);
+        firstBasicTest.userEntry(loginPage.emailUser, loginPage.passwordUser);
     });
 
     it.only('Invalid Password', () => {
-        accountPage.userEntry(loginData.wrongEmail, loginData.passwordUser);
-        accountPage.wrongUser()
+        firstBasicTest.userEntry(loginPage.wrongEmail, loginPage.passwordUser);
+        firstBasicTest.wrongUser()
     });
     
 });

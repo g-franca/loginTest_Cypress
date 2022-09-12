@@ -1,4 +1,11 @@
 import loginPage from "../page/main"
+import dressesPage from "../page/dressespage"
+import shoppingPage from "../page/shoppingcart"
+import addressPage from "../page/adresspage"
+import shippingPage from "../page/shippingpage"
+import paymentPage from "../page/paymentpage"
+import bankwirePage from "../page/bankwirepage"
+import orderCompletePage from "../page/ordercompletedpage"
 import "cypress-real-events/support"
 
 
@@ -15,27 +22,27 @@ describe("Purchase Process",() => {
         cy.visit(Cypress.env("urlMain"));
         cy.log("Account Page");
         // To Casual Dresses Page
-        loginPage.enterCasualDressesPage();
+        dressesPage.enterCasualDressesPage();
         //To Casual Dresses to add to cart page
-        loginPage.addItemToCart();
+        dressesPage.addItemToCart();
         // Proceed to Check out
-        loginPage.CasualDressCheckOutbtn();
+        dressesPage.CasualDressCheckOutbtn();
         //SHOPPING-CART SUMMARY Page
         cy.log('Summary Page');
-        loginPage.shopCartCheckOutBtn();
+        shoppingPage.shopCartCheckOutBtn();
         //ADDRESSES Page
-        loginPage.adressCheckOutBtn();
+        addressPage.adressCheckOutBtn();
         // SHIPPING Page
-        loginPage.shippingPage();
+        shippingPage.shippingPage();
         //PAYMENT METHOD Page
         cy.log('Payment Method');   
-        loginPage.bankWirePayment();
+        paymentPage.bankWirePayment();
         //Order Confirmation
         cy.log('Order Confirmation');
-        loginPage.orderConfirmationBtn();
+        bankwirePage.orderConfirmationBtn();
         //Order Completed
         cy.log('Order Completed');
-        loginPage.orderCompleted();
+        orderCompletePage.orderCompleted();
     });
 });
 

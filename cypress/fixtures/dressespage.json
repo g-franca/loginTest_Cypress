@@ -1,0 +1,7 @@
+{
+    "dressesBtn":"#block_top_menu>ul>:nth-child(2)>a",
+  "casualDressBtn":"#block_top_menu>ul>:nth-child(2)>ul>li:nth-child(1)>a",
+  "printedDress":"#center_column>ul>li>div>div.left-block>div>a.product_img_link>img",
+  "addToCartBtn":"#center_column>ul>li>div>div.right-block>div.button-container>a.button.ajax_add_to_cart_button.btn.btn-default>span",
+  "CasualDressCheckOutbtn":"#layer_cart>div.clearfix>div.layer_cart_cart.col-xs-12.col-md-6>div.button-container>a>span"
+}

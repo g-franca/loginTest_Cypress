@@ -1,4 +1,4 @@
-import loginData from "../fixtures/login.json"
+import loginData from "../fixtures/loginpage.json"
 
 Cypress.Commands.add("logIn", () => {
     cy.get(loginData.emailBar).type(loginData.emailUser);
